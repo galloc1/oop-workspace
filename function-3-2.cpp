@@ -1,7 +1,3 @@
-#include <iostream>
-
-using namespace std;
-
 int min_element(int array[], int n){
     int total = 0;
     if(n>0){
@@ -52,13 +48,4 @@ int median_array(int array[], int n){
         median = sortedArray[n/2+n%2];
     }
     return median;
-}
-
-int main(){
-    int array[10] = {1, 2, 2, 5, 9, 10, 10, 11, 15, 17};
-    int arrayy[10] = {17, 15, 11, 10, 10, 9, 5, 2, 2, 1};
-    int arrayyy[6] = {1, 2, 3, 5, 2, 1};
-    std::cout << median_array(arrayyy, 6);
-    //two_five_nine(array, 0);
-    return 0;
 }
