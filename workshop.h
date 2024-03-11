@@ -8,7 +8,7 @@ void changeValue(double* pointer){
 
 void printArray(double* arrayAddress, int n){
     for(int i = 0; i<n; i++){
-        cout<<*(arrayAddress+i)<<endl;
+        cout<<*(arrayAddress+i)<<" ";
     }
 }
 
