@@ -1,7 +1,17 @@
-extern void count_digits(int array[4][4]);
+extern double* duplicateArray(double* array, int size);
 
 int main(){
-    int array[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-    count_digits(array);
+    double* array = new double[10];
+    array[0] = 5;
+    array[1] = 8;
+    array[2] = 2;
+    array[3] = 5;
+    array[4] = 4;
+    array[5] = 9;
+    array[6] = 0;
+    array[7] = 3;
+    array[8] = 5;
+    array[9] = 5;
+    double * dupedArray = duplicateArray(array, 10);
     return 0;
 }

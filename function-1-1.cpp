@@ -1,7 +1,9 @@
-int sum_diagonal(int array[4][4]){
-    int sum = 0;
-    for(int i=0; i<4; i++){
-        sum+=array[i][i];
+double arrayMin(double* array, int size){
+    double min = *array;
+    for(int i=0; i<size; i++){
+        if(min>array[i]){
+            min=array[i];
+        }
     }
-    return sum;
+    return min;
 }
