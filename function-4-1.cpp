@@ -17,6 +17,10 @@ int secondSmallestSum(int *numbers,int length){
     int indexOfSmallest = 0;
 
     for(int i=0; i<length; i++){
+        cout<<numbers[i];
+    }
+
+    for(int i=0; i<length; i++){
         if(smallestNumber>numbers[i]){
             smallestNumber = numbers[i];
             if(smallestNumber<0){
@@ -29,7 +33,7 @@ int secondSmallestSum(int *numbers,int length){
     if(smallestNumber<0){
         int smallestSum = 0;
         int secondSmallestSum = 0;
-        int closestToZero = numbers[0];
+        int closestToZero = abs(numbers[0]);
 
         for(int i = 0; i<length; i++){
             if(numbers[i]<0){
