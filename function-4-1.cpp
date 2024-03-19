@@ -13,17 +13,43 @@ int *readNumbers(){
 }
 
 int secondSmallestSum(int *numbers,int length){
-    int min = numbers[0], min2 = numbers[0], minDex = 0;
+    int smallestNumber = numbers[0];
+    int indexOfSmallest = 0;
+
     for(int i=0; i<length; i++){
-        if(numbers[i]<min){
-            min = numbers[i];
-            minDex = i;
+        if(smallestNumber>numbers[i]){
+            smallestNumber = numbers[i];
+            if(smallestNumber<0){
+                break;
+            }
+            indexOfSmallest = i;
         }
     }
-    for(int i=0; i<length; i++){
-        if(numbers[i]<min2 && i!=minDex){
-            min2 = numbers[i];
+
+    if(smallestNumber<0){
+        int smallestSum = 0;
+        int secondSmallestSum = 0;
+        int closestToZero = numbers[0];
+
+        for(int i = 0; i<length; i++){
+            if(numbers[i]<0){
+                smallestSum+=numbers[i];
+            }
+            if(abs(numbers[i]) < closestToZero){
+                closestToZero = abs(numbers[i]);
+            }
         }
+
+        secondSmallestSum = smallestSum+closestToZero;
+        return secondSmallestSum;
     }
-    return min2;
+    else{
+        int secondSmallestNumber = numbers[0];
+        for(int i=0; i<length; i++){
+            if(numbers[i]<secondSmallestNumber && i!=indexOfSmallest){
+                secondSmallestNumber = numbers[i];
+            }
+        }
+        return secondSmallestNumber;
+    }
 }
