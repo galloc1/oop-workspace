@@ -12,48 +12,40 @@ int *readNumbers(){
     return inputtedNumbers;
 }
 
+
+
 int secondSmallestSum(int *numbers,int length){
-    int smallestNumber = numbers[0];
-    int indexOfSmallest = 0;
+    int smallestSum = 0;
+    int indexOfSmallestSum = 0;
+    int endOfSmallestSum = 0;
+    int secondSmallestSum = 0;
 
     for(int i=0; i<length; i++){
-        cout<<numbers[i]<<endl;
+        int smallestFromIndexI = 0;
+
+        for(int j=i; j<length; j++){
+            smallestFromIndexI += numbers[j];
+            if(smallestFromIndexI<smallestSum){
+                smallestSum = smallestFromIndexI;
+                indexOfSmallestSum = i;
+                endOfSmallestSum = j;
+            }
+        }
+
     }
 
     for(int i=0; i<length; i++){
-        if(smallestNumber>numbers[i]){
-            smallestNumber = numbers[i];
-            if(smallestNumber<0){
-                break;
-            }
-            indexOfSmallest = i;
-        }
-    }
+        int smallestFromIndexI = 0;
 
-    if(smallestNumber<0){
-        int smallestSum = 0;
-        int secondSmallestSum = 0;
-        int closestToZero = abs(numbers[0]);
-
-        for(int i = 0; i<length; i++){
-            if(numbers[i]<0){
-                smallestSum+=numbers[i];
-            }
-            if(abs(numbers[i]) < closestToZero){
-                closestToZero = abs(numbers[i]);
+        for(int j=i; j<length; j++){
+            smallestFromIndexI += numbers[j];
+            if(smallestFromIndexI<secondSmallestSum){
+                if(!(i==indexOfSmallestSum && j==endOfSmallestSum)){
+                    secondSmallestSum = smallestFromIndexI;
+                }
             }
         }
-
-        secondSmallestSum = smallestSum+closestToZero;
-        return secondSmallestSum;
+        
     }
-    else{
-        int secondSmallestNumber = numbers[0];
-        for(int i=0; i<length; i++){
-            if(numbers[i]<secondSmallestNumber && i!=indexOfSmallest){
-                secondSmallestNumber = numbers[i];
-            }
-        }
-        return secondSmallestNumber;
-    }
+    return secondSmallestSum;
 }
