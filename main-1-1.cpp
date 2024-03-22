@@ -1,7 +1,16 @@
-extern int *readNumbers() ;
-extern void printNumbers(int *numbers,int length) ;
+#include "Person.h"
+#include <iostream>
+
+using namespace std;
+
+extern Person* createPersonArray(int n);
 
 int main(){
-    int* numbers = readNumbers();
-    printNumbers(numbers, 10);
+    int numPpl;
+    cin >> numPpl;
+    Person* people = createPersonArray(numPpl);
+    for(int i=0; i<numPpl; i++){
+        cout << people[i].name << " Age " << people[i].age << endl;
+    }
+    return 0;
 }

@@ -1,17 +1,15 @@
-extern void modifyArray(double* array, int size, double value);
+#include "Person.h"
+#include <iostream>
+
+using namespace std;
+
+extern PersonList createPersonList(int n);
 
 int main(){
-    double* array = new double[10];
-    array[0] = 5;
-    array[1] = 8;
-    array[2] = 2;
-    array[3] = 5;
-    array[4] = 4;
-    array[5] = 9;
-    array[6] = 0;
-    array[7] = 3;
-    array[8] = 5;
-    array[9] = 5;
-    modifyArray(array, 10, 5);
-    return 0;
+    int n;
+    cin >> n;
+    PersonList personList = createPersonList(n);
+    for(int i=0; i<n; i++){
+        cout << personList.people[i].name << " Age " << personList.people[i].age << endl;
+    }
 }

@@ -1,7 +1,18 @@
-extern void print_scaled(int array[3][3],int scale);
+#include "Person.h"
+#include <iostream>
+
+using namespace std;
+
+extern PersonList createPersonList(int n);
+extern PersonList shallowCopyPersonList(PersonList pl);
 
 int main(){
-    int array[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    print_scaled(array, 8);
+    PersonList pl1 = createPersonList(5);
+    PersonList pl2 = shallowCopyPersonList(pl1);
+    pl2.people[0].age = 2;
+    for(int i=0; i<5; i++){
+        cout<<pl1.people[i].name << " " << pl1.people[i].age<<" vs ";
+        cout<< pl2.people[i].name << " " << pl2.people[i].age << endl;
+    }
     return 0;
 }

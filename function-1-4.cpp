@@ -1,12 +1,23 @@
-#include <iostream>
+#include "Person.h"
 
-using namespace std;
-
-void print_scaled(int array[3][3],int scale){
-    for(int i=0; i<3; i++){
-        for(int j=0; j<3; j++){
-            cout << array[i][j]*scale << " ";
-        }
-        cout << endl;
+PersonList createPersonList(int n){
+    Person* people = new Person[n];
+    for(int i=0; i<n; i++){
+        Person person;
+        person.name = "Jane Doe";
+        person.age = 1;
+        people[i] = person;
     }
+    PersonList personList;
+    personList.people = people;
+    personList.numPeople = n;
+    return personList;
+}
+
+PersonList shallowCopyPersonList(PersonList pl){
+    Person* people = pl.people;
+    PersonList personList;
+    personList.people = people;
+    personList.numPeople = pl.numPeople;
+    return personList;
 }

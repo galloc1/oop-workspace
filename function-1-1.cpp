@@ -1,19 +1,12 @@
-#include <iostream>
+#include "Person.h"
 
-using namespace std;
-
-int *readNumbers(){
-    int* inputtedNumbers = new int[10];
-    for(int i=0; i<10; i++){
-        string num;
-        cin >> num;
-        inputtedNumbers[i] = stoi(num);
+Person* createPersonArray(int n) {
+    Person* people = new Person[n];
+    for(int i=0; i<n; i++){
+        Person person;
+        person.name = "John Doe";
+        person.age = 0;
+        people[i] = person;
     }
-    return inputtedNumbers;
-}
-
-void printNumbers(int *numbers,int length){
-    for(int i=0; i<length; i++){
-        cout << i << " " << numbers[i] << endl;
-    }
+    return people;
 }

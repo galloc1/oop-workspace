@@ -1,17 +1,18 @@
-extern double* duplicateArray(double* array, int size);
+#include "Person.h"
+#include <iostream>
+
+using namespace std;
+
+extern PersonList createPersonList(int n);
+extern PersonList deepCopyPersonList(PersonList pl);
 
 int main(){
-    double* array = new double[10];
-    array[0] = 5;
-    array[1] = 8;
-    array[2] = 2;
-    array[3] = 5;
-    array[4] = 4;
-    array[5] = 9;
-    array[6] = 0;
-    array[7] = 3;
-    array[8] = 5;
-    array[9] = 5;
-    double * dupedArray = duplicateArray(array, 10);
+    PersonList pl1 = createPersonList(5);
+    PersonList pl2 = deepCopyPersonList(pl1);
+    pl2.people[0].age = 2;
+    for(int i=0; i<5; i++){
+        cout<<pl1.people[i].name << " " << pl1.people[i].age<<" vs ";
+        cout<< pl2.people[i].name << " " << pl2.people[i].age << endl;
+    }
     return 0;
 }
