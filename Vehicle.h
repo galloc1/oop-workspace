@@ -9,8 +9,8 @@ protected:
     int ID;
 public:
     Vehicle() : timeOfEntry(time(nullptr)), ID(0) {}
-    Vehicle(int ID) : timeOfEntry(time(nullptr)), ID(ID) {}
-    virtual int getParkingDuration();
+    Vehicle(int ID);
+    virtual int getParkingDuration() {return 0;}
     //~Vehicle();
 
     int getID() {return ID;}

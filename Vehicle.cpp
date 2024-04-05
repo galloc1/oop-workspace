@@ -1,2 +1,2 @@
 #include "Vehicle.h"
-    int Vehicle::getParkingDuration() {return 0;}
+Vehicle::Vehicle(int ID) : timeOfEntry(time(nullptr)), ID(ID) {}
