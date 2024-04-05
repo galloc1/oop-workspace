@@ -19,6 +19,7 @@ void ParkingLot::unparkVehicle(int ID){
         }
         else if(vehicles[i].getID()==ID){
             isHere = true;
+            numVehicles--;
         }
     }
     if(!isHere){

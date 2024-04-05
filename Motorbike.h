@@ -11,9 +11,7 @@ public:
     //~Motorbike();
     Motorbike(int ID) : Vehicle(ID) {}
 
-    int getParkingDuration(){
-        return (time(nullptr)-timeOfEntry)*0.85;
-    }
+    int getParkingDuration();
 };
 
 #endif

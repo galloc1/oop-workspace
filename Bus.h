@@ -11,9 +11,7 @@ public:
     Bus(int ID) : Vehicle(ID) {}
     //~Bus();
 
-    int getParkingDuration(){
-        return (time(nullptr)-timeOfEntry)*0.75;
-    }
+    int getParkingDuration();
 };
 
 #endif
