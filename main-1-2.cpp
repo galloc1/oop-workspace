@@ -1,19 +1,33 @@
 #include <iostream>
-#include "Truck.h"
-#include "Truck_yard.h"
-
-using namespace std;
+#include "Vehicle.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
+#include "ParkingLot.h"
 
 int main(){
-    Truck_yard truck_yard;
-    cout << truck_yard.get_total_stock_count()<<endl;
-    cout<<truck_yard.get_stock_count(0)<<endl;
-    Truck* trucks = truck_yard.get_current_stock_list();
-    for(int i=0; i<truck_yard.get_total_stock_count(); i++){
-        cout<<trucks[i].get_brand_code();
+    ParkingLot parkingLot(10);
+    for(int i=0; i<10; i++){
+        Vehicle vehicle;
+        std::string type;
+        int ID;
+        std::cin>>type;
+        std::cin>>ID;
+        if(type=="Car"){
+            vehicle = Car(ID);
+        }
+        else if(type=="Bus"){
+            vehicle = Bus(ID);
+        }
+        else if(type=="Motorbike"){
+            vehicle = Motorbike(ID);
+        }
+        parkingLot.parkVehicle(&vehicle);
     }
-    delete[] trucks;
-    Truck truck;
-    cout<<truck_yard.addStock(truck);
+
+    int c;
+    std::cin>>c;
+    parkingLot.unparkVehicle(c);
+
     return 0;
 }
