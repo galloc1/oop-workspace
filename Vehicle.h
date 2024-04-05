@@ -10,7 +10,7 @@ protected:
 public:
     Vehicle() : timeOfEntry(time(nullptr)), ID(0) {}
     Vehicle(int ID);
-    virtual int getParkingDuration() {return 0;}
+    virtual int getParkingDuration() {return 500;}
     //~Vehicle();
 
     int getID() {return ID;}
