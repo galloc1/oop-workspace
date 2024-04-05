@@ -13,7 +13,8 @@ void ParkingLot::parkVehicle(Vehicle* vehicle){
 
 void ParkingLot::unparkVehicle(int ID){
     bool isHere = false;
-    for(int i=0; i<numVehicles; i++){
+    int numVeh = numVehicles;
+    for(int i=0; i<numVeh; i++){
         if(isHere){
             vehicles[i-1]=vehicles[i];
         }
