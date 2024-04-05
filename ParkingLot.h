@@ -1,6 +1,9 @@
 #ifndef PARKINGLOT_H
 #define PARKINGLOT_H
 #include "Vehicle.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
 
 class ParkingLot
 {
