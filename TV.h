@@ -2,7 +2,7 @@
 #define TV_H
 #include "Appliance.h"
 
-class TV : Appliance{
+class TV : protected Appliance{
     protected:
         double screenSize;
     public:

@@ -2,7 +2,7 @@
 #define FRIDGE_H
 #include "Appliance.h"
 
-class Fridge : Appliance{
+class Fridge : protected Appliance{
     protected:
         double volume;
     public:
