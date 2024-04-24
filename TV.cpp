@@ -1,10 +1,9 @@
 #include "TV.h"
-#include <iostream>
 
 TV::TV() : Appliance(), screenSize(0){}
-TV::TV(int powerRating, double screenSize) : Appliance(powerRating), screenSize(screenSize){std::cout<<"Power rating: "<<powerRating << std::endl << "Screen size: "<<screenSize<<std::endl;}
+TV::TV(int powerRating, double screenSize) : Appliance(powerRating), screenSize(screenSize){}
 
-double TV::getPowerConsumption(){double powerConsumption = powerRating*(screenSize/10.0); std::cout << "Power Consumption: "<<powerConsumption<<std::endl; return powerConsumption;}
+double TV::getPowerConsumption(){double powerConsumption = powerRating*(screenSize/10.0); return powerConsumption;}
 
 double TV::getScreenSize(){return screenSize;}
 
