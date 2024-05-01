@@ -1,0 +1,2 @@
+all: main.cpp Course.cpp Course.h Grade.cpp Grade.h Gradebook.cpp Gradebook.h Instructor.cpp Instructor.h Person.cpp Person.h Student.cpp Student.h University.cpp University.h
+	g++ main.cpp Course.cpp Course.h Grade.cpp Grade.h Gradebook.cpp Gradebook.h Instructor.cpp Instructor.h Person.cpp Person.h Student.cpp Student.h University.cpp University.h
