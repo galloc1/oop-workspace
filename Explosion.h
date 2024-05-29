@@ -6,7 +6,7 @@
 #include "GameEntity.h"
 #include "Effect.h"
 
-class Explosion : private GameEntity, private Effect
+class Explosion : public GameEntity, public Effect
 {
 private:
     /* data */

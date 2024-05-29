@@ -21,9 +21,9 @@ public:
 
     void gameLoop(int maxIterations, double mineDistanceThreshold);
 
-    std::vector<GameEntity*> getEntities();
+    std::vector<GameEntity*> get_entities();
 
-    void setEntities(std::vector<GameEntity*> entities);
+    void set_entities(std::vector<GameEntity*> entities);
 };
 
 Game::Game(/* args */)
@@ -82,12 +82,12 @@ void Game::gameLoop(int maxIterations, double mineDistanceThreshold)
     }
 }
 
-std::vector<GameEntity*> Game::getEntities()
+std::vector<GameEntity*> Game::get_entities()
 {
     return entities;
 }
 
-void Game::setEntities(std::vector<GameEntity*> entities)
+void Game::set_entities(std::vector<GameEntity*> entities)
 {
     for(int i=0; i<this->entities.size(); i++){
         delete this->entities[i];
