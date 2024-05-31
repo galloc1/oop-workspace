@@ -64,7 +64,7 @@ void Game::gameLoop(int maxIterations, double trapActivationDistance){
                 Character* character = static_cast<Character*>(grid[j]);
                 character->move(1, 0);
                 if(std::get<0>(character->getPos()) > gridWidth){
-                    std::cout << "Character has won the game!";
+                    std::cout << "Character has won the game!" << std::endl;
                     return;
                 }
                 for(int k=0; k<grid.size(); k++){
@@ -78,7 +78,7 @@ void Game::gameLoop(int maxIterations, double trapActivationDistance){
             }
         }
     }
-    std::cout << "Maximum number of iterations reached. Game over.";
+    std::cout << "Maximum number of iterations reached. Game over." << std::endl;
 }
 
 
